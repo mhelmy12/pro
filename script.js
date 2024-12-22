@@ -28,9 +28,10 @@ const cart = {
 };
 
 document.querySelectorAll('.card button').forEach((button) => {
-  button.addEventListener('click', () => {
-    let{name, price} = button.closest.dataset;
-    price = parseFloat(price);
+  button.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    const name = card.getAttribute('data-name');
+    const price = parseFloat(card.getAttribute('data-price'));
     cart.addItem(name, price);
   });
 });
