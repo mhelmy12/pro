@@ -29,7 +29,7 @@ const cart = {
 
 document.querySelectorAll('.card button').forEach((button) => {
   button.addEventListener('click', () => {
-    let{name, price} = button.dataset;
+    let{name, price} = button.closest.dataset;
     price = parseFloat(price);
     cart.addItem(name, price);
   });
